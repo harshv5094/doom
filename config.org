@@ -9,8 +9,10 @@
   - [[#doom-theme][Doom theme]]
   - [[#font-family][Font Family]]
   - [[#relative-line-number][Relative Line Number]]
+  - [[#global-auto-revert][Global Auto Revert]]
 - [[#org-mode-settings][Org Mode Settings]]
   - [[#org-directory][Org directory]]
+  - [[#org-journal-config][Org Journal Config]]
 - [[#terminal][Terminal]]
   - [[#setting-up-terminal-keybinding][Setting up Terminal Keybinding]]
 
@@ -41,6 +43,14 @@ Enable relative line number
 (setq display-line-numbers-type 'relative)
 #+end_src
 
+** Global Auto Revert
+A buffer can get out of sync with respect to its visited file on disk if that file is changed by another program. To keep it up to date, you can enable Auto Revert mode by typing M-x auto-revert-mode, or you can set it to be turned on globally with ‘global-auto-revert-mode’.  I have also turned on Global Auto Revert on non-file buffers, which is especially useful for ‘dired’ buffers.
+
+#+begin_src emacs-lisp
+(global-auto-revert-mode 1)
+(setq global-auto-revert-non-file-buffers t)
+#+end_src
+
 * Org Mode Settings
 
 ** Org directory
@@ -52,6 +62,16 @@ Setting different org directories default path default path
 (setq org-default-notes-file (concat org-directory "/refile.org"))
 ; NOTE Default Org Roam Directory
 (setq org-roam-directory "~/notebook/")
+#+end_src
+
+** Org Journal Config
+#+begin_src emacs-lisp
+; NOTE Setting up org journal directory
+(setq org-journal-dir "~/org/journal/"
+      org-journal-date-prefix "* "
+      org-journal-time-prefix "** "
+      org-journal-date-format "%B %d, %Y (%A) "
+      org-journal-file-format "%Y-%m-%d.org")
 #+end_src
 
 * Terminal
