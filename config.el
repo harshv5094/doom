@@ -14,6 +14,22 @@
 (map! :leader
       :desc "Vterm Toggle" "v t" #'+vterm/toggle)
 
+(use-package! org-auto-tangle
+  :defer t
+  :hook (org-mode . org-auto-tangle-mode)
+  :config
+  (setq org-auto-tangle-default t))
+
+(defun hv/insert-auto-tangle-tag ()
+  "Insert auto-tangle tag in a literate config."
+  (interactive)
+  (evil-org-open-below 1)
+  (insert "#+auto_tangle: t ")
+  (evil-force-normal-state))
+
+(map! :leader
+      :desc "Insert auto_tangle tag" "i a" #'hv/insert-auto-tangle-tag)
+
 ; NOTE Default Org Directory
 (setq org-directory "~/org/")
 ; NOTE Default Note File

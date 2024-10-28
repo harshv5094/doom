@@ -12,7 +12,8 @@
   - [[#global-auto-revert][Global Auto Revert]]
   - [[#setting-up-terminal-keybinding][Setting up Terminal Keybinding]]
 - [[#org-mode-settings][Org Mode Settings]]
-  - [[#org-directory][Org directory]]
+  - [[#org-auto-tangle][Org auto tangle]]
+  - [[#org-mode-directories][Org Mode Directories]]
   - [[#org-journal-config][Org Journal Config]]
 
 * Basic Configuration
@@ -59,7 +60,27 @@ A buffer can get out of sync with respect to its visited file on disk if that fi
 
 * Org Mode Settings
 
-** Org directory
+** Org auto tangle
+~org-auto-tangle~ allows you to add the option ~#+auto_tangle: t~ in your Org file so that it automatically tangles when you save the document.
+#+begin_src emacs-lisp
+(use-package! org-auto-tangle
+  :defer t
+  :hook (org-mode . org-auto-tangle-mode)
+  :config
+  (setq org-auto-tangle-default t))
+
+(defun hv/insert-auto-tangle-tag ()
+  "Insert auto-tangle tag in a literate config."
+  (interactive)
+  (evil-org-open-below 1)
+  (insert "#+auto_tangle: t ")
+  (evil-force-normal-state))
+
+(map! :leader
+      :desc "Insert auto_tangle tag" "i a" #'hv/insert-auto-tangle-tag)
+#+end_src
+
+** Org Mode Directories
 Setting different org directories default path default path
 #+begin_src emacs-lisp
 ; NOTE Default Org Directory
@@ -79,3 +100,4 @@ Setting different org directories default path default path
       org-journal-date-format "%B %d, %Y (%A) "
       org-journal-file-format "%Y-%m-%d.org")
 #+end_src
+
