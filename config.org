@@ -10,11 +10,10 @@
   - [[#font-family][Font Family]]
   - [[#relative-line-number][Relative Line Number]]
   - [[#global-auto-revert][Global Auto Revert]]
+  - [[#setting-up-terminal-keybinding][Setting up Terminal Keybinding]]
 - [[#org-mode-settings][Org Mode Settings]]
   - [[#org-directory][Org directory]]
   - [[#org-journal-config][Org Journal Config]]
-- [[#terminal][Terminal]]
-  - [[#setting-up-terminal-keybinding][Setting up Terminal Keybinding]]
 
 * Basic Configuration
 
@@ -51,6 +50,13 @@ A buffer can get out of sync with respect to its visited file on disk if that fi
 (setq global-auto-revert-non-file-buffers t)
 #+end_src
 
+** Setting up Terminal Keybinding
+#+begin_src emacs-lisp
+; NOTE Setting vterm keybinding
+(map! :leader
+      :desc "Vterm Toggle" "v t" #'+vterm/toggle)
+#+end_src
+
 * Org Mode Settings
 
 ** Org directory
@@ -72,13 +78,4 @@ Setting different org directories default path default path
       org-journal-time-prefix "** "
       org-journal-date-format "%B %d, %Y (%A) "
       org-journal-file-format "%Y-%m-%d.org")
-#+end_src
-
-* Terminal
-
-** Setting up Terminal Keybinding
-#+begin_src emacs-lisp
-; NOTE Setting vterm keybinding
-(map! :leader
-      :desc "Vterm Toggle" "v t" #'+vterm/toggle)
 #+end_src

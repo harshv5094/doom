@@ -10,6 +10,10 @@
 (global-auto-revert-mode 1)
 (setq global-auto-revert-non-file-buffers t)
 
+; NOTE Setting vterm keybinding
+(map! :leader
+      :desc "Vterm Toggle" "v t" #'+vterm/toggle)
+
 ; NOTE Default Org Directory
 (setq org-directory "~/org/")
 ; NOTE Default Note File
@@ -23,7 +27,3 @@
       org-journal-time-prefix "** "
       org-journal-date-format "%B %d, %Y (%A) "
       org-journal-file-format "%Y-%m-%d.org")
-
-; NOTE Setting vterm keybinding
-(map! :leader
-      :desc "Vterm Toggle" "v t" #'+vterm/toggle)
