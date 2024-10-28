@@ -1,6 +1,37 @@
 (beacon-mode 1)
 
+; NOTE Setting default doom emacs banner
+(defun my-custom-banner ()
+  (let* ((banner'("______ _____ ____ ___ ___"
+  "`  _  V  _  V  _ \\|  V  ´"
+  "| | | | | | | | | |     |"
+  "| | | | | | | | | | . . |"
+  "| |/ / \\ \\| | |/ /\\ |V| |"
+  "|   /   \\__/ \\__/  \\| | |"
+  "|  /                ' | |"
+  "| /     E M A C S     \\ |"
+  "´´                     ``"))
+         (longest-line (apply #'max (mapcar #'length banner))))
+    (put-text-property
+     (point)
+     (dolist (line banner (point))
+       (insert (+doom-dashboard--center
+                +doom-dashboard--width
+                (concat line (make-string (max 0 (- longest-line (length line))) 32)))
+               "\n"))
+     'face 'doom-dashboard-banner)))
+
+(setq +doom-dashboard-ascii-banner-fn #'my-custom-banner)
+;;(remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
+
 (setq doom-theme 'doom-one)
+
+(map! :leader
+      (:prefix ("=" . "open file")
+       ;; :desc "Edit agenda file"      "a" #'(lambda () (interactive) (find-file "~/org/agenda.org"))
+       :desc "Edit doom config.org"  "c" #'(lambda () (interactive) (find-file "~/.config/doom/config.org"))
+       :desc "Edit doom init.el"     "i" #'(lambda () (interactive) (find-file "~/.config/doom/init.el"))
+       :desc "Edit doom packages.el" "p" #'(lambda () (interactive) (find-file "~/.config/doom/packages.el"))))
 
 (setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 15 :weight 'regular))
 

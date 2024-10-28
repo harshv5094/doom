@@ -6,7 +6,9 @@
 * Table Of Contents :toc:
 - [[#basic-configuration][Basic Configuration]]
   - [[#beacon-mode][Beacon Mode]]
+  - [[#changing-banner][Changing Banner]]
   - [[#doom-theme][Doom theme]]
+  - [[#edit-specific-file][Edit Specific file]]
   - [[#font-family][Font Family]]
   - [[#relative-line-number][Relative Line Number]]
   - [[#global-auto-revert][Global Auto Revert]]
@@ -24,10 +26,49 @@ To find cursor anywhere
 (beacon-mode 1)
 #+end_src
 
+** Changing Banner
+Here I'm setting custom doom emacs banner
+#+begin_src emacs-lisp
+; NOTE Setting default doom emacs banner
+(defun my-custom-banner ()
+  (let* ((banner'("______ _____ ____ ___ ___"
+  "`  _  V  _  V  _ \\|  V  ´"
+  "| | | | | | | | | |     |"
+  "| | | | | | | | | | . . |"
+  "| |/ / \\ \\| | |/ /\\ |V| |"
+  "|   /   \\__/ \\__/  \\| | |"
+  "|  /                ' | |"
+  "| /     E M A C S     \\ |"
+  "´´                     ``"))
+         (longest-line (apply #'max (mapcar #'length banner))))
+    (put-text-property
+     (point)
+     (dolist (line banner (point))
+       (insert (+doom-dashboard--center
+                +doom-dashboard--width
+                (concat line (make-string (max 0 (- longest-line (length line))) 32)))
+               "\n"))
+     'face 'doom-dashboard-banner)))
+
+(setq +doom-dashboard-ascii-banner-fn #'my-custom-banner)
+;;(remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
+#+end_src
+
 ** Doom theme
 Setting default theme
 #+begin_src emacs-lisp
 (setq doom-theme 'doom-one)
+#+end_src
+
+** Edit Specific file
+Here we are adding keybinds to edit doom emacs config files
+#+begin_src emacs-lisp
+(map! :leader
+      (:prefix ("=" . "open file")
+       ;; :desc "Edit agenda file"      "a" #'(lambda () (interactive) (find-file "~/org/agenda.org"))
+       :desc "Edit doom config.org"  "c" #'(lambda () (interactive) (find-file "~/.config/doom/config.org"))
+       :desc "Edit doom init.el"     "i" #'(lambda () (interactive) (find-file "~/.config/doom/init.el"))
+       :desc "Edit doom packages.el" "p" #'(lambda () (interactive) (find-file "~/.config/doom/packages.el"))))
 #+end_src
 
 ** Font Family
@@ -45,7 +86,6 @@ Enable relative line number
 
 ** Global Auto Revert
 A buffer can get out of sync with respect to its visited file on disk if that file is changed by another program. To keep it up to date, you can enable Auto Revert mode by typing M-x auto-revert-mode, or you can set it to be turned on globally with ‘global-auto-revert-mode’.  I have also turned on Global Auto Revert on non-file buffers, which is especially useful for ‘dired’ buffers.
-
 #+begin_src emacs-lisp
 (global-auto-revert-mode 1)
 (setq global-auto-revert-non-file-buffers t)
