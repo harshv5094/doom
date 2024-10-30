@@ -179,7 +179,7 @@ Here is my custom function ~my-custom-header~ to change the font size of the org
 Setting different org directories default path default path
 #+begin_src emacs-lisp
 ; NOTE Default Org Directory
-(setq org-directory "~/notebook/org/")
+(setq org-directory "~/org/")
 ; NOTE Default Note File
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 #+end_src
@@ -188,7 +188,7 @@ Setting different org directories default path default path
 Setting Org Journal Default location
 #+begin_src emacs-lisp
 ; NOTE Setting up org journal directory
-(setq org-journal-dir "~/notebook/org/journal/"
+(setq org-journal-dir "~/org/journal/"
       org-journal-date-prefix "* "
       org-journal-time-prefix "** "
       org-journal-date-format "%B %d, %Y (%A) "

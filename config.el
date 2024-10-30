@@ -95,12 +95,12 @@
 (my-custom-header)
 
 ; NOTE Default Org Directory
-(setq org-directory "~/notebook/org/")
+(setq org-directory "~/org/")
 ; NOTE Default Note File
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 
 ; NOTE Setting up org journal directory
-(setq org-journal-dir "~/notebook/org/journal/"
+(setq org-journal-dir "~/org/journal/"
       org-journal-date-prefix "* "
       org-journal-time-prefix "** "
       org-journal-date-format "%B %d, %Y (%A) "
