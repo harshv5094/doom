@@ -16,7 +16,7 @@ function have() {
 #+end_src
 
 ** Installing Emacs
-Now we are actually downloading emacs from pacman
+Now we are actually downloading emacs and its required packages from pacman (more packages coming soon ...)
 #+begin_src bash
 printf "%b\n" "Installing Emacs"
 if have pacman; then
