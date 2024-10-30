@@ -1,7 +1,3 @@
-; Beacon Mode -> Allows user to show cursor
-(beacon-mode 1)
-(beacon-blink-automated)
-
 ; NOTE Setting default doom emacs banner
 (defun my-custom-banner ()
   (let* ((banner'("______ _____ ____ ___ ___"

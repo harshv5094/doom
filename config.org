@@ -5,7 +5,6 @@
 
 * Table Of Contents :toc:
 - [[#basic-configuration][Basic Configuration]]
-  - [[#beacon-mode][Beacon Mode]]
   - [[#changing-banner][Changing Banner]]
   - [[#doom-theme][Doom theme]]
   - [[#edit-specific-file][Edit Specific file]]
@@ -22,14 +21,6 @@
   - [[#org-roam-directory-default-location][Org Roam directory default location]]
 
 * Basic Configuration
-
-** Beacon Mode
-To find cursor anywhere
-#+begin_src emacs-lisp
-; Beacon Mode -> Allows user to show cursor
-(beacon-mode 1)
-(beacon-blink-automated)
-#+end_src
 
 ** Changing Banner
 Here I'm setting custom doom emacs banner
