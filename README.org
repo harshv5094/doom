@@ -1,7 +1,7 @@
 #+TITLE: Harsh Vyapari's Emacs Config
+#+AUTHOR: Harsh Vyapari
 #+PROPERTY: header-args :tangle install.sh
 #+auto_tangle: t
-#+AUTHOR: Harsh Vyapari
 
 * Script code
 
