@@ -57,7 +57,7 @@ Here I'm setting custom doom emacs banner
 ** Doom theme
 Setting default theme
 #+begin_src emacs-lisp
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-one-light)
 #+end_src
 
 ** Edit Specific file

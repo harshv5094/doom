@@ -24,7 +24,7 @@
 (setq +doom-dashboard-ascii-banner-fn #'my-custom-banner)
 ;;(remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
 
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-one-light)
 
 (map! :leader
       (:prefix ("=" . "open file")
