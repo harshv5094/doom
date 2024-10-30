@@ -1,3 +1,5 @@
+(beacon-mode 1)
+
 (setq doom-theme 'doom-one)
 
 (map! :leader

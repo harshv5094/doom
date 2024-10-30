@@ -50,5 +50,6 @@
 ;; (unpin! t)
 
 (package! all-the-icons)
+(package! beacon)
 (package! evil-tutor)
 (package! org-auto-tangle)

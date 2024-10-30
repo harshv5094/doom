@@ -5,6 +5,7 @@
 
 * Table Of Contents :toc:
 - [[#basic-configuration][Basic Configuration]]
+  - [[#beacon-mode][Beacon Mode]]
   - [[#doom-theme][Doom theme]]
   - [[#edit-specific-file][Edit Specific file]]
   - [[#font-family][Font Family]]
@@ -19,6 +20,11 @@
   - [[#org-roam-directory-default-location][Org Roam directory default location]]
 
 * Basic Configuration
+
+** Beacon Mode
+#+begin_src emacs-lisp
+(beacon-mode 1)
+#+end_src
 
 ** Doom theme
 Setting default theme
