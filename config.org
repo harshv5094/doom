@@ -1,4 +1,4 @@
-#+title: My Custom Config
+#+title: My Custom Doom Emacs configuration
 #+author: Harsh Vyapari (harshv5094)
 #+date: <2024-10-25 Fri>
 #+startup: showeverything
