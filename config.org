@@ -14,6 +14,7 @@
   - [[#global-auto-revert][Global Auto Revert]]
   - [[#setting-up-terminal-keybinding][Setting up Terminal Keybinding]]
 - [[#org-mode-settings][Org Mode Settings]]
+  - [[#org-agenda-default-file][Org agenda default file]]
   - [[#org-auto-tangle][Org auto tangle]]
   - [[#org-header-defaut-font-size][Org Header Defaut Font Size]]
   - [[#org-mode-directory-default-location][Org Mode Directory Default location]]
@@ -72,7 +73,7 @@ Here we are adding keybinds to edit doom emacs config files
 #+begin_src emacs-lisp
 (map! :leader
       (:prefix ("=" . "open file")
-       ;; :desc "Edit agenda file"      "a" #'(lambda () (interactive) (find-file "~/org/agenda.org"))
+       :desc "Edit agenda file"      "a" #'(lambda () (interactive) (find-file "~/org/agenda.org"))
        :desc "Edit doom config.org"  "c" #'(lambda () (interactive) (find-file "~/.config/doom/config.org"))
        :desc "Edit doom init.el"     "i" #'(lambda () (interactive) (find-file "~/.config/doom/init.el"))
        :desc "Edit doom packages.el" "p" #'(lambda () (interactive) (find-file "~/.config/doom/packages.el"))))
@@ -121,6 +122,13 @@ A buffer can get out of sync with respect to its visited file on disk if that fi
 #+end_src
 
 * Org Mode Settings
+
+** Org agenda default file
+Setting up org agenda default file name
+#+begin_src emacs-lisp
+(after! org
+  (setq org-agenda-files '("~/org/agenda.org")))
+#+end_src
 
 ** Org auto tangle
 ~org-auto-tangle~ allows you to add the option ~#+auto_tangle: t~ in your Org file so that it automatically tangles when you save the document.
