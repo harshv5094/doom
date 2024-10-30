@@ -71,15 +71,13 @@
 (map! :leader
       :desc "Insert auto_tangle tag" "i a" #'hv/insert-auto-tangle-tag)
 
-(after! org
-  (setq org-agenda-files "~/org/agenda.org"))
-
 ; NOTE Custom function to change header size
 (defun my-custom-header ()
   "Enable Doom Emacs Custom Header Size"
   (interactive)
   (with-eval-after-load 'org-faces
-    (set-face-attribute 'org-document-title nil :font doom-big-font :weight 'bold :height 1.7)
+    (set-face-attribute 'org-document-title nil :font doom-big-font :weight 'bold :height 1.4)
+    (set-face-attribute 'org-document-info nil :font doom-big-font :weight 'bold :height 1.4)
   (dolist
       (face
        '((org-level-1 1.6)
@@ -94,12 +92,12 @@
 (my-custom-header)
 
 ; NOTE Default Org Directory
-(setq org-directory "~/org/")
+(setq org-directory "~/notebook/org/")
 ; NOTE Default Note File
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 
 ; NOTE Setting up org journal directory
-(setq org-journal-dir "~/org/journal/"
+(setq org-journal-dir "~/notebook/org/journal/"
       org-journal-date-prefix "* "
       org-journal-time-prefix "** "
       org-journal-date-format "%B %d, %Y (%A) "

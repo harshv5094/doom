@@ -1,7 +1,7 @@
 #+title: My Custom Config
 #+author: Harsh Vyapari (harshv5094)
 #+date: <2024-10-25 Fri>
-#+startup: overview
+#+startup: showeverything
 
 * Table Of Contents :toc:
 - [[#basic-configuration][Basic Configuration]]
@@ -15,7 +15,6 @@
   - [[#setting-up-terminal-keybinding][Setting up Terminal Keybinding]]
 - [[#org-mode-settings][Org Mode Settings]]
   - [[#org-auto-tangle][Org auto tangle]]
-  - [[#org-agenda-default-location][Org Agenda Default Location]]
   - [[#org-header-defaut-font-size][Org Header Defaut Font Size]]
   - [[#org-mode-directory-default-location][Org Mode Directory Default location]]
   - [[#org-journal-config][Org Journal Config]]
@@ -143,13 +142,6 @@ A buffer can get out of sync with respect to its visited file on disk if that fi
       :desc "Insert auto_tangle tag" "i a" #'hv/insert-auto-tangle-tag)
 #+end_src
 
-** Org Agenda Default Location
-Here we are defining default location of org agenda files
-#+begin_src emacs-lisp
-(after! org
-  (setq org-agenda-files "~/org/agenda.org"))
-#+end_src
-
 ** Org Header Defaut Font Size
 Here is my custom function ~my-custom-header~ to change the font size of the org headings.
 
@@ -159,7 +151,8 @@ Here is my custom function ~my-custom-header~ to change the font size of the org
   "Enable Doom Emacs Custom Header Size"
   (interactive)
   (with-eval-after-load 'org-faces
-    (set-face-attribute 'org-document-title nil :font doom-big-font :weight 'bold :height 1.7)
+    (set-face-attribute 'org-document-title nil :font doom-big-font :weight 'bold :height 1.4)
+    (set-face-attribute 'org-document-info nil :font doom-big-font :weight 'bold :height 1.4)
   (dolist
       (face
        '((org-level-1 1.6)
@@ -178,7 +171,7 @@ Here is my custom function ~my-custom-header~ to change the font size of the org
 Setting different org directories default path default path
 #+begin_src emacs-lisp
 ; NOTE Default Org Directory
-(setq org-directory "~/org/")
+(setq org-directory "~/notebook/org/")
 ; NOTE Default Note File
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 #+end_src
@@ -187,7 +180,7 @@ Setting different org directories default path default path
 Setting Org Journal Default location
 #+begin_src emacs-lisp
 ; NOTE Setting up org journal directory
-(setq org-journal-dir "~/org/journal/"
+(setq org-journal-dir "~/notebook/org/journal/"
       org-journal-date-prefix "* "
       org-journal-time-prefix "** "
       org-journal-date-format "%B %d, %Y (%A) "
