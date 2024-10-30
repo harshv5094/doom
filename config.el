@@ -47,10 +47,6 @@
 (global-auto-revert-mode 1)
 (setq global-auto-revert-non-file-buffers t)
 
-; NOTE Setting vterm keybinding
-(map! :leader
-      :desc "Vterm Toggle" "v t" #'+vterm/toggle)
-
 (after! org
   (setq org-agenda-files '("~/org/agenda.org")))
 

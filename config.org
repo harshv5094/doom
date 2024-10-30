@@ -11,7 +11,6 @@
   - [[#font-family][Font Family]]
   - [[#relative-line-number][Relative Line Number]]
   - [[#global-auto-revert][Global Auto Revert]]
-  - [[#setting-up-terminal-keybinding][Setting up Terminal Keybinding]]
 - [[#org-mode-settings][Org Mode Settings]]
   - [[#org-agenda-default-file][Org agenda default file]]
   - [[#org-auto-tangle][Org auto tangle]]
@@ -103,13 +102,6 @@ A buffer can get out of sync with respect to its visited file on disk if that fi
 #+begin_src emacs-lisp
 (global-auto-revert-mode 1)
 (setq global-auto-revert-non-file-buffers t)
-#+end_src
-
-** Setting up Terminal Keybinding
-#+begin_src emacs-lisp
-; NOTE Setting vterm keybinding
-(map! :leader
-      :desc "Vterm Toggle" "v t" #'+vterm/toggle)
 #+end_src
 
 * Org Mode Settings
