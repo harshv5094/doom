@@ -1,14 +1,32 @@
+#+TITLE: Harsh Vyapari's Emacs Config
+#+PROPERTY: header-args :tangle install.sh
+#+auto_tangle: t
+#+AUTHOR: Harsh Vyapari
+
+* Script code
+
+** have function
+This is a common function to check if command exist or not
+#+begin_src bash
 #!/usr/bin/env bash
 
 function have() {
   command -v "$1" &>/dev/null
 }
+#+end_src
 
+** Installing Emacs
+Now we are actually downloading emacs from pacman
+#+begin_src bash
 printf "%b\n" "Installing Emacs"
 if have pacman; then
   sudo pacman -S emacs ttf-jetbrains-mono-nerd
 fi
+#+end_src
 
+** Removing Previous Emacs folder (if exist)
+This section removes old emacs config folder (if exist)
+#+begin_src bash
 if [ -e "$HOME/.config/emacs" ]; then
     printf "%b\n" "Removing Old Emacs Directory"
     rm -rf "$HOME/.config/emacs"
@@ -18,10 +36,15 @@ elif [ -e "$HOME/.emacs.d" ]; then
 else
     printf "%b\n" "This folder doesn't exist"
 fi
+#+end_src
 
+** Setting up Doom Emacs Distribution
+This section sets up the doom emacs file
+#+begin_src bash
 # Clonning doom emacs repo
 printf "%b\n" "Setting Up Doom Emacs"
 git clone --depth 1 "https://github.com/doomemacs/doomemacs" ~/.config/emacs
 
 ~/.config/emacs/bin/doom install
 ~/.config/emacs/bin/doom sync
+#+end_src
