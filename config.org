@@ -82,11 +82,11 @@ Here we are adding keybinds to edit doom emacs config files
 ** Font Family
 Settings related to fonts within Doom Emacs:
 
-- ~doom-font~ - Standard monospace font that is used for most things in Emacs.
-- ~doom-variable-pitch-font~ Variable font which is useful in some Emacs plugin.
-- ~doom-big-font~ - Used in ~doom-big-font-mode~; useful for presentation.
-- ~font-lock-comment-face~ - for comments.
-- ~font-lock-keyword-face~ - for keywords with special significance like ~setq~ in elisp.
++ ~doom-font~ - Standard monospace font that is used for most things in Emacs.
++ ~doom-variable-pitch-font~ Variable font which is useful in some Emacs plugin.
++ ~doom-big-font~ - Used in ~doom-big-font-mode~; useful for presentation.
++ ~font-lock-comment-face~ - for comments.
++ ~font-lock-keyword-face~ - for keywords with special significance like ~setq~ in elisp.
 
 #+begin_src emacs-lisp
 (setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 15)
