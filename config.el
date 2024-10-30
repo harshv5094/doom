@@ -36,7 +36,7 @@
        :desc "Edit doom packages.el" "p" #'(lambda () (interactive) (find-file "~/.config/doom/packages.el"))))
 
 (setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 15)
-      doom-variable-pitch-font (font-spec :family "Ubuntu" :size 15)
+      doom-variable-pitch-font (font-spec :family "JetBrainsMonoNL Nerd Font" :size 15)
       doom-big-font (font-spec :family "JetBrainsMono Nerd Font" :size 20))
 (after! doom-themes
   (setq doom-themes-enable-bold t
