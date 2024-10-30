@@ -15,8 +15,11 @@ if [ -e "$HOME/.config/emacs" ]; then
 elif [ -e "$HOME/.emacs.d" ]; then
     printf "%b\n" "Removing Old Emacs Directory"
     rm -rf "$HOME/.emacs.d"
+elif [ -e "$HOME/.doom.d" ]; then
+    printf "%b\n" "Removing Old Doom Emacs Directory"
+    rm -rf "$HOME/.doom.d"
 else
-    printf "%b\n" "This folder doesn't exist"
+    printf "%b\n" "Old Config Directories are not present in this config"
 fi
 
 # Clonning doom emacs repo
