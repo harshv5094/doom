@@ -76,8 +76,8 @@
   "Enable Doom Emacs Custom Header Size"
   (interactive)
   (with-eval-after-load 'org-faces
-    (set-face-attribute 'org-document-title nil :font doom-big-font :weight 'bold :slant 'italic :height 1.4)
-    (set-face-attribute 'org-document-info nil :font doom-big-font :weight 'bold :slant 'italic :height 1.4)
+    ;; (set-face-attribute 'org-document-title nil :font doom-big-font :weight 'bold :slant 'italic :height 1.4)
+    ;; (set-face-attribute 'org-document-info nil :font doom-big-font :weight 'bold :slant 'italic :height 1.4)
   (dolist
       (face
        '((org-level-1 1.6)
