@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
 function have() {
-  command -v "$1" &>/dev/null
+    command -v "$1" &>/dev/null
 }
 
 printf "%b\n" "Installing Emacs"
 if have pacman; then
-  sudo pacman -S emacs ttf-jetbrains-mono-nerd libvterm
+    sudo pacman -S emacs ttf-jetbrains-mono-nerd libvterm
 fi
 
 if [ -e "$HOME/.config/emacs" ]; then
