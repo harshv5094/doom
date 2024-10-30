@@ -20,7 +20,7 @@ Now we are actually downloading emacs from pacman
 #+begin_src bash
 printf "%b\n" "Installing Emacs"
 if have pacman; then
-  sudo pacman -S emacs ttf-jetbrains-mono-nerd
+  sudo pacman -S emacs ttf-jetbrains-mono-nerd libvterm
 fi
 #+end_src
 
