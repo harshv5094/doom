@@ -1,4 +1,6 @@
+; Beacon Mode -> Allows user to show cursor
 (beacon-mode 1)
+(beacon-blink-automated)
 
 ; NOTE Setting default doom emacs banner
 (defun my-custom-banner ()
@@ -33,7 +35,15 @@
        :desc "Edit doom init.el"     "i" #'(lambda () (interactive) (find-file "~/.config/doom/init.el"))
        :desc "Edit doom packages.el" "p" #'(lambda () (interactive) (find-file "~/.config/doom/packages.el"))))
 
-(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 15 :weight 'regular))
+(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 15)
+      doom-variable-pitch-font (font-spec :family "Ubuntu" :size 15)
+      doom-big-font (font-spec :family "JetBrainsMono Nerd Font" :size 20))
+(after! doom-themes
+  (setq doom-themes-enable-bold t
+        doom-themes-enable-italic t))
+(custom-set-faces!
+  '(font-lock-comment-face :slant italic)
+  '(font-lock-keyword-face :slant italic))
 
 ; NOTE setting relative line number
 (setq display-line-numbers-type 'relative)
@@ -61,12 +71,32 @@
 (map! :leader
       :desc "Insert auto_tangle tag" "i a" #'hv/insert-auto-tangle-tag)
 
+(after! org
+  (setq org-agenda-files "~/org/agenda.org"))
+
+; NOTE Custom function to change header size
+(defun my-custom-header ()
+  "Enable Doom Emacs Custom Header Size"
+  (interactive)
+  (with-eval-after-load 'org-faces
+    (set-face-attribute 'org-document-title nil :font doom-big-font :weight 'bold :height 1.7)
+  (dolist
+      (face
+       '((org-level-1 1.6)
+         (org-level-2 1.5)
+         (org-level-3 1.4)
+         (org-level-4 1.3)
+         (org-level-5 1.2)
+         (org-level-6 1.1)
+         (org-level-7 1.0)
+         (org-level-8 0.9)))
+    (set-face-attribute (nth 0 face) nil :font doom-font :weight 'bold :height (nth 1 face)))))
+(my-custom-header)
+
 ; NOTE Default Org Directory
 (setq org-directory "~/org/")
 ; NOTE Default Note File
-(setq org-default-notes-file (concat org-directory "/refile.org"))
-; NOTE Default Org Roam Directory
-(setq org-roam-directory "~/notebook/")
+(setq org-default-notes-file (concat org-directory "/notes.org"))
 
 ; NOTE Setting up org journal directory
 (setq org-journal-dir "~/org/journal/"
@@ -74,3 +104,6 @@
       org-journal-time-prefix "** "
       org-journal-date-format "%B %d, %Y (%A) "
       org-journal-file-format "%Y-%m-%d.org")
+
+; NOTE Default Org Roam Directory
+(setq org-roam-directory "~/notebook/")
