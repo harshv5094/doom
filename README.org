@@ -1,7 +1,16 @@
-#+TITLE: Harsh Vyapari's Emacs Config
+#+TITLE: Harsh Vyapari's Doom Emacs Config
 #+AUTHOR: Harsh Vyapari
 #+PROPERTY: header-args :tangle install.sh
 #+auto_tangle: t
+
+* Table of Contents :toc:
+- [[#script-code][Script code]]
+  - [[#color-statement-variables][Color Statement Variables]]
+  - [[#have-function][have function]]
+  - [[#cmdcheck-function][cmdCheck function]]
+  - [[#installing-emacs][Installing Emacs]]
+  - [[#removing-previous-emacs-folder-if-exist][Removing Previous Emacs folder (if exist)]]
+  - [[#setting-up-doom-emacs-distribution][Setting up Doom Emacs Distribution]]
 
 * Script code
 
