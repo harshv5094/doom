@@ -25,6 +25,13 @@
 (global-auto-revert-mode 1)
 (setq global-auto-revert-non-file-buffers t)
 
+(set-face-attribute 'mode-line nil :font "JetBrainsMonoNL Nerd Font")
+(setq doom-modeline-height 30                    ;; Sets modeline height
+      doom-modeline-bar-width 5                  ;; sets right bar width
+      doom-modeline-buffer-file-name-style 'auto ;; auto setup doom modeline filename
+      doom-modeline-persp-name t                 ;; adds perspective name to modeline
+      doom-modeline-persp-icon t)                ;; adds folder icon next to persp name
+
 (after! org
   (setq org-agenda-files '("~/org/agenda.org")))
 

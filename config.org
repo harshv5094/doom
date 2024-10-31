@@ -11,6 +11,7 @@
   - [[#font-family][Font Family]]
   - [[#relative-line-number][Relative Line Number]]
   - [[#global-auto-revert][Global Auto Revert]]
+  - [[#modeline][Modeline]]
 - [[#org-mode-settings][Org Mode Settings]]
   - [[#org-agenda-default-file][Org agenda default file]]
   - [[#org-auto-tangle][Org auto tangle]]
@@ -76,6 +77,17 @@ A buffer can get out of sync with respect to its visited file on disk if that fi
 #+begin_src emacs-lisp
 (global-auto-revert-mode 1)
 (setq global-auto-revert-non-file-buffers t)
+#+end_src
+
+** Modeline
+The modeline is the bottom status bar that appears in Emacs windows. For more information on what is available to configure in the Doom modeline, check out: https://github.com/seagle0128/doom-modeline
+#+begin_src emacs-lisp
+(set-face-attribute 'mode-line nil :font "JetBrainsMonoNL Nerd Font")
+(setq doom-modeline-height 30                    ;; Sets modeline height
+      doom-modeline-bar-width 5                  ;; sets right bar width
+      doom-modeline-buffer-file-name-style 'auto ;; auto setup doom modeline filename
+      doom-modeline-persp-name t                 ;; adds perspective name to modeline
+      doom-modeline-persp-icon t)                ;; adds folder icon next to persp name
 #+end_src
 
 * Org Mode Settings
