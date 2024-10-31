@@ -9,6 +9,7 @@
   - [[#have-function][have function]]
   - [[#cmdcheck-function][cmdCheck function]]
   - [[#installing-emacs][Installing Emacs]]
+  - [[#starting-emacs-daemon-using-systemctl][Starting Emacs Daemon using systemctl]]
   - [[#removing-previous-emacs-folder-if-exist][Removing Previous Emacs folder (if exist)]]
   - [[#setting-up-doom-emacs-distribution][Setting up Doom Emacs Distribution]]
 
@@ -57,6 +58,12 @@ if have pacman; then
     sudo pacman -S emacs ttf-jetbrains-mono-nerd libvterm
     cmdCheck
 fi
+#+end_src
+
+** Starting Emacs Daemon using systemctl
+#+begin_src bash
+# Turning on emacs daemon
+systemctl --user enable --now emacs
 #+end_src
 
 ** Removing Previous Emacs folder (if exist)

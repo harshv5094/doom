@@ -24,6 +24,9 @@ if have pacman; then
     cmdCheck
 fi
 
+# Turning on emacs daemon
+systemctl --user enable --now emacs
+
 printf "%b\n" "${CYAN}Checking for old emacs directory (if exist).${RESET}"
 if [ -e "$HOME/.config/emacs" ]; then
     printf "%b\n" "${YELLOW}Removing Old Emacs Directory.${RESET}"
