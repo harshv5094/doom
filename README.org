@@ -84,13 +84,13 @@ fi
 This section sets up the doom emacs file
 #+begin_src bash
 # Clonning doom emacs repo
-printf "%b\n" "${YELLOW}Setting Up Doom Emacs.${RESET}"
-git clone --depth 1 "https://github.com/doomemacs/doomemacs." ~/.config/emacs
+printf "%b\n" "${YELLOW}Clonning Doom Emacs Repo.${RESET}"
+git clone --depth 1 "https://github.com/doomemacs/doomemacs" ~/.config/emacs
 cmdCheck
 
+printf "%b\n" "${YELLOW}Installing Doom Emacs.${RESET}"
 # Starting Installation Process
 ~/.config/emacs/bin/doom install
-~/.config/emacs/bin/doom sync
 
 # Checking if last commands execution returns 0 as exit code
 if [ $? -eq 0 ]; then
