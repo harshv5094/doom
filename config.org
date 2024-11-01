@@ -137,7 +137,7 @@ Here is my custom function ~my-custom-header~ to change the font size of the org
          (org-level-6 1.2)
          (org-level-7 1.1)
          (org-level-8 1.0)))
-    (set-face-attribute (nth 0 face) nil :font doom-variable-pitch-font :weight 'bold :height (nth 1 face)))))
+    (set-face-attribute (nth 0 face) nil :font doom-variable-pitch-font :height (nth 1 face)))))
 (my-custom-header)
 #+end_src
 
