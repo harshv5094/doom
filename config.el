@@ -65,7 +65,7 @@
          (org-level-6 1.1)
          (org-level-7 1.0)
          (org-level-8 0.9)))
-    (set-face-attribute (nth 0 face) nil :font doom-font :weight 'bold :slant 'italic :height (nth 1 face)))))
+    (set-face-attribute (nth 0 face) nil :font doom-font :weight 'bold :height (nth 1 face)))))
 (my-custom-header)
 
 ; NOTE Default Org Directory
