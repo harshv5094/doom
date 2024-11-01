@@ -10,7 +10,7 @@
        :desc "Edit doom packages.el" "p" #'(lambda () (interactive) (find-file "~/.config/doom/packages.el"))))
 
 (setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 15)
-      doom-variable-pitch-font (font-spec :family "JetBrainsMonoNL Nerd Font" :size 15)
+      doom-variable-pitch-font (font-spec :family "FiraCode Nerd Font Mono" :size 15)
       doom-big-font (font-spec :family "JetBrainsMono Nerd Font" :size 20))
 (after! doom-themes
   (setq doom-themes-enable-bold t
@@ -65,7 +65,7 @@
          (org-level-6 1.2)
          (org-level-7 1.1)
          (org-level-8 1.0)))
-    (set-face-attribute (nth 0 face) nil :font doom-font :weight 'bold :height (nth 1 face)))))
+    (set-face-attribute (nth 0 face) nil :font doom-variable-pitch-font :weight 'bold :height (nth 1 face)))))
 (my-custom-header)
 
 ; NOTE Default Org Directory

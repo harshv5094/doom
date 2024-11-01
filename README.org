@@ -55,7 +55,7 @@ Now we are actually downloading emacs and its required packages from pacman (mor
 #+begin_src bash
 printf "%b\n" "${CYAN}Installing Emacs.${RESET}"
 if have pacman; then
-    sudo pacman -S emacs ttf-jetbrains-mono-nerd libvterm
+    sudo pacman -S emacs ttf-jetbrains-mono-nerd ttf-firacode-nerd libvterm
     cmdCheck
 fi
 #+end_src

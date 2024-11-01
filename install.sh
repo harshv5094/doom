@@ -20,7 +20,7 @@ function cmdCheck() {
 
 printf "%b\n" "${CYAN}Installing Emacs.${RESET}"
 if have pacman; then
-    sudo pacman -S emacs ttf-jetbrains-mono-nerd libvterm
+    sudo pacman -S emacs ttf-jetbrains-mono-nerd ttf-firacode-nerd libvterm
     cmdCheck
 fi
 
