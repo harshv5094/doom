@@ -51,7 +51,7 @@
   :config
   (setq org-auto-tangle-default t))
 
-(defun hv/insert-auto-tangle-tag ()
+(defun insert-auto-tangle-tag ()
   "Insert auto-tangle tag in a literate config."
   (interactive)
   (evil-org-open-below 1)
@@ -59,7 +59,7 @@
   (evil-force-normal-state))
 
 (map! :leader
-      :desc "Insert auto_tangle tag" "i a" #'hv/insert-auto-tangle-tag)
+      :desc "Insert auto_tangle tag" "i a" #'insert-auto-tangle-tag)
 
 ; NOTE Custom function to change header size
 (defun my-custom-header ()
