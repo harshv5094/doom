@@ -12,6 +12,8 @@
   - [[#relative-line-number][Relative Line Number]]
   - [[#global-auto-revert][Global Auto Revert]]
   - [[#modeline][Modeline]]
+- [[#markdown][Markdown]]
+  - [[#markdown-headers][Markdown Headers]]
 - [[#org-mode-settings][Org Mode Settings]]
   - [[#org-agenda-default-file][Org agenda default file]]
   - [[#org-auto-tangle][Org auto tangle]]
@@ -87,6 +89,21 @@ The modeline is the bottom status bar that appears in Emacs windows. For more in
       doom-modeline-buffer-file-name-style 'auto ;; auto setup doom modeline filename
       doom-modeline-persp-name t                 ;; adds perspective name to modeline
       doom-modeline-persp-icon t)                ;; adds folder icon next to persp name
+#+end_src
+
+* Markdown
+
+** Markdown Headers
+Here we are giving markdown header some height.
+#+begin_src emacs-lisp
+(custom-set-faces
+ '(markdown-header-face ((t (:inherit font-lock-function-name-face :weight bold :family "variable-pitch"))))
+ '(markdown-header-face-1 ((t (:inherit markdown-header-face :height 1.7))))
+ '(markdown-header-face-2 ((t (:inherit markdown-header-face :height 1.6))))
+ '(markdown-header-face-3 ((t (:inherit markdown-header-face :height 1.5))))
+ '(markdown-header-face-4 ((t (:inherit markdown-header-face :height 1.4))))
+ '(markdown-header-face-5 ((t (:inherit markdown-header-face :height 1.3))))
+ '(markdown-header-face-6 ((t (:inherit markdown-header-face :height 1.2)))))
 #+end_src
 
 * Org Mode Settings
