@@ -40,6 +40,8 @@
  '(markdown-header-face-5 ((t (:inherit markdown-header-face :height 1.3))))
  '(markdown-header-face-6 ((t (:inherit markdown-header-face :height 1.2)))))
 
+(xterm-mouse-mode 1)
+
 (after! org
   (setq org-agenda-files '("~/org/agenda.org")))
 
