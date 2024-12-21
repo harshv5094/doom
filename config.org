@@ -132,7 +132,7 @@ Setting up org agenda default file name
   :config
   (setq org-auto-tangle-default t))
 
-(defun hv/insert-auto-tangle-tag ()
+(defun insert-auto-tangle-tag ()
   "Insert auto-tangle tag in a literate config."
   (interactive)
   (evil-org-open-below 1)
@@ -140,7 +140,7 @@ Setting up org agenda default file name
   (evil-force-normal-state))
 
 (map! :leader
-      :desc "Insert auto_tangle tag" "i a" #'hv/insert-auto-tangle-tag)
+      :desc "Insert auto_tangle tag" "i a" #'insert-auto-tangle-tag)
 #+end_src
 
 ** Org Header Defaut Font Size
