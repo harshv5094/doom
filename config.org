@@ -190,5 +190,5 @@ Setting Org Journal Default location
 Setting up Org Roam Default location
 #+begin_src emacs-lisp
 ; NOTE Default Org Roam Directory
-(setq org-roam-directory "~/notebook/")
+(setq org-roam-directory "~/org/roam")
 #+end_src
