@@ -86,7 +86,7 @@
        ;;grammar           ; tasing grammar mistake every you make
 
        :tools
-       ansible
+       ;; ansible
        ;;biblio            ; Writes a PhD for you (citation needed)
        ;;collab            ; buffers with friends
        ;;debugger          ; FIXME stepping through code, to help you add bugs
@@ -114,7 +114,7 @@
        :lang
        ;;agda              ; types of types of types of types...
        ;;beancount         ; mind the GAAP
-       (cc +lsp)         ; C > C++ == 1
+       ;; (cc +lsp)         ; C > C++ == 1
        ;;clojure           ; java with a lisp
        ;;common-lisp       ; if you've seen one lisp, you've seen them all
        ;;coq               ; proofs-as-programs
@@ -147,7 +147,7 @@
        ;;latex             ; writing papers in Emacs has never been so fun
        ;;lean              ; for folks with too much to prove
        ;;ledger            ; be audit you can be
-       (lua +lsp)               ; one-based indices? one-based indices
+       ;; (lua +lsp)               ; one-based indices? one-based indices
        markdown          ; writing docs for people to ignore
        ;;nim               ; python + lisp at the speed of c
        ;;nix               ; I hereby declare "nix geht mehr!"
@@ -167,13 +167,13 @@
        ;;(rust +lsp)       ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
        ;;scala             ; java, but good
        ;;(scheme +guile)   ; a fully conniving family of lisps
-       (sh +fish +lsp)              ; she sells {ba,z,fi}sh shells on the C xor
+       ;; (sh +fish +lsp)              ; she sells {ba,z,fi}sh shells on the C xor
        ;;sml
        ;;solidity          ; do you need a blockchain? No.
        ;;swift             ; who asked for emoji variables?
        ;;terra             ; Earth and Moon in alignment for performance.
        ;;web               ; the tubes
-       yaml              ; JSON, but readable
+       ;; yaml              ; JSON, but readable
        ;;zig               ; C, but simpler
 
        :email
