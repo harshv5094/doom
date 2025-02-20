@@ -92,4 +92,4 @@
       org-journal-file-format "%Y-%m-%d.org")
 
 ; NOTE Default Org Roam Directory
-(setq org-roam-directory "~/org/roam")
+(setq org-roam-directory "~/notebook")

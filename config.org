@@ -92,6 +92,7 @@ The modeline is the bottom status bar that appears in Emacs windows. For more in
       doom-modeline-persp-icon t)                ;; adds folder icon next to persp name
 #+end_src
 
+
 * Markdown
 
 ** Markdown Headers
@@ -190,5 +191,5 @@ Setting Org Journal Default location
 Setting up Org Roam Default location
 #+begin_src emacs-lisp
 ; NOTE Default Org Roam Directory
-(setq org-roam-directory "~/org/roam")
+(setq org-roam-directory "~/notebook")
 #+end_src
