@@ -1,6 +1,20 @@
-(beacon-mode 1)
+;; Auto-shutdown daemon after 10 minutes of inactivity
+(run-with-idle-timer
+ (* 10 60)  ; 10 minutes in seconds
+ t           ; repeat timer
+ (lambda ()
+   (when (and (daemonp)
+              ;; Ignore special invisible frames
+              (null (seq-filter (lambda (f)
+                                  (frame-visible-p f))
+                                (frame-list)))
+              ;; No emacsclients connected
+              (zerop (length server-clients)))
+     (message "No clients or visible frames for 10 minutes — shutting down daemon.")
+     (save-some-buffers t)
+     (kill-emacs))))
 
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-gruvbox)
 
 (map! :leader
       (:prefix ("=" . "open file")
@@ -19,9 +33,6 @@
   '(font-lock-comment-face :slant italic)
   '(font-lock-keyword-face :slant italic))
 
-; NOTE setting relative line number
-(setq display-line-numbers-type 'relative)
-
 (global-auto-revert-mode 1)
 (setq global-auto-revert-non-file-buffers t)
 
@@ -30,6 +41,9 @@
       doom-modeline-buffer-file-name-style 'auto ;; auto setup doom modeline filename
       doom-modeline-persp-name t                 ;; adds perspective name to modeline
       doom-modeline-persp-icon t)                ;; adds folder icon next to persp name
+
+; NOTE setting relative line number
+(setq display-line-numbers-type 'relative)
 
 (custom-set-faces
  '(markdown-header-face ((t (:inherit font-lock-function-name-face :weight bold :family "variable-pitch"))))
@@ -45,39 +59,18 @@
 (after! org
   (setq org-agenda-files '("~/org/agenda.org")))
 
-(use-package! org-auto-tangle
-  :defer t
-  :hook (org-mode . org-auto-tangle-mode)
-  :config
-  (setq org-auto-tangle-default t))
-
-(defun insert-auto-tangle-tag ()
-  "Insert auto-tangle tag in a literate config."
-  (interactive)
-  (evil-org-open-below 1)
-  (insert "#+auto_tangle: t ")
-  (evil-force-normal-state))
-
-(map! :leader
-      :desc "Insert auto_tangle tag" "i a" #'insert-auto-tangle-tag)
-
 ; NOTE Custom function to change header size
-(defun my-custom-header ()
-  "Enable Doom Emacs Custom Header Size"
-  (interactive)
-  (with-eval-after-load 'org-faces
-  (dolist
-      (face
-       '((org-level-1 1.7)
-         (org-level-2 1.6)
-         (org-level-3 1.5)
-         (org-level-4 1.4)
-         (org-level-5 1.3)
-         (org-level-6 1.2)
-         (org-level-7 1.1)
-         (org-level-8 1.0)))
-    (set-face-attribute (nth 0 face) nil :font doom-variable-pitch-font :height (nth 1 face)))))
-(my-custom-header)
+(custom-theme-set-faces!
+'doom-gruvbox
+'(org-level-8 :inherit outline-3 :height 1.0)
+'(org-level-7 :inherit outline-3 :height 1.0)
+'(org-level-6 :inherit outline-3 :height 1.1)
+'(org-level-5 :inherit outline-3 :height 1.2)
+'(org-level-4 :inherit outline-3 :height 1.3)
+'(org-level-3 :inherit outline-3 :height 1.4)
+'(org-level-2 :inherit outline-2 :height 1.5)
+'(org-level-1 :inherit outline-1 :height 1.6)
+'(org-document-title  :height 1.8 :bold t :underline nil))
 
 ; NOTE Default Org Directory
 (setq org-directory "~/org/")
@@ -90,6 +83,3 @@
       org-journal-time-prefix "** "
       org-journal-date-format "%B %d, %Y (%A) "
       org-journal-file-format "%Y-%m-%d.org")
-
-; NOTE Default Org Roam Directory
-(setq org-roam-directory "~/notebook")

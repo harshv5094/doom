@@ -49,7 +49,4 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;; (unpin! t)
 
-(package! all-the-icons)
-(package! beacon)
-(package! evil-tutor)
-(package! org-auto-tangle)
+(package! tldr)
