@@ -5,7 +5,6 @@
 
 * Table Of Contents :toc:
 - [[#basic-configuration][Basic Configuration]]
-  - [[#-auto-shutdown-emacs-daemon-after-inactivity][💤 Auto-shutdown Emacs daemon after inactivity]]
   - [[#doom-theme][Doom theme]]
   - [[#edit-specific-file][Edit Specific file]]
   - [[#font-family][Font Family]]
@@ -22,35 +21,6 @@
   - [[#org-journal-config][Org Journal Config]]
 
 * Basic Configuration
-
-** 💤 Auto-shutdown Emacs daemon after inactivity
-When running Emacs as a daemon, it can be nice to have it automatically exit
-after a period of inactivity — for example, when all client frames are closed
-and no buffers are being used.
-
-This block defines a timer that checks periodically whether:
-- Emacs is running as a daemon (`daemonp`)
-- There are no open frames (`frame-list`)
-- There are no connected clients (`server-clients`)
-If all are true for a given time interval (e.g. 10 minutes), Emacs will shut down cleanly.
-
-#+begin_src emacs-lisp
-;; Auto-shutdown daemon after 10 minutes of inactivity
-(run-with-idle-timer
- (* 10 60)  ; 10 minutes in seconds
- t           ; repeat timer
- (lambda ()
-   (when (and (daemonp)
-              ;; Ignore special invisible frames
-              (null (seq-filter (lambda (f)
-                                  (frame-visible-p f))
-                                (frame-list)))
-              ;; No emacsclients connected
-              (zerop (length server-clients)))
-     (message "No clients or visible frames for 10 minutes — shutting down daemon.")
-     (save-some-buffers t)
-     (kill-emacs))))
-#+end_src
 
 ** Doom theme
 Setting default theme

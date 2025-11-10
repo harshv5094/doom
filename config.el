@@ -1,19 +1,3 @@
-;; Auto-shutdown daemon after 10 minutes of inactivity
-(run-with-idle-timer
- (* 10 60)  ; 10 minutes in seconds
- t           ; repeat timer
- (lambda ()
-   (when (and (daemonp)
-              ;; Ignore special invisible frames
-              (null (seq-filter (lambda (f)
-                                  (frame-visible-p f))
-                                (frame-list)))
-              ;; No emacsclients connected
-              (zerop (length server-clients)))
-     (message "No clients or visible frames for 10 minutes — shutting down daemon.")
-     (save-some-buffers t)
-     (kill-emacs))))
-
 (setq doom-theme 'doom-gruvbox)
 
 (map! :leader
