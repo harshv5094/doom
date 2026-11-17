@@ -1,0 +1,19 @@
+#+title: Elfeed Feeds
+#+startup: overview
+
+* Feeds :elfeed:
+** News :news:
+*** [[https://itsfoss.com/rss/][Its Foss]] :itsfoss:
+*** [[https://archlinux.org/feeds/news/][Arch Linux News]] :archlinux_news:
+** Blogs :blogs:
+*** [[https://blog.vaxry.net/feed][Vaxry]] :vaxry:
+*** [[https://mitchellh.com/feed.xml][Mitchell Hashimoto]] :mitchellh:
+*** [[https://harshv5094.github.io/index.xml][My Blog]] :harshv5094:
+*** [[https://stephango.com/feed.xml][Stephango]] :stephango:
+*** [[https://echasnovski.com/blog.xml][Echasnovski]] :echasnovski:
+*** [[https://nvim-mini.org/blog/index.xml][Nvim Mini]] :nvim_mini:
+*** [[https://linkarzu.com/feed.xml][Linkarzu]] :linkarzu:
+** Reddit :reddit:
+*** [[https://reddit.com/r/neovim.rss][r/neovim]] :r_neovim:
+*** [[https://reddit.com/r/emacs.rss][r/emacs]] :r_emacs:
+*** [[https://reddit.com/r/bash.rss][r/bash]] :r_bash:

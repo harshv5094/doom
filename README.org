@@ -1,0 +1,4 @@
+#+title: My Emacs Configuration
+#+author: Harsh Vyapari <@harshv5094>
+
+This is my doom emacs configuration
